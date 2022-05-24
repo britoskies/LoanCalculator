@@ -1,0 +1,26 @@
+﻿@model Application.ViewModel.LoanViewModel;
+
+<form method="get" asp-controller="Loan" asp-action="Index" class="container mt-5">
+	<section class="row">
+        <div class="form-group d-flex flex-column gap-3 mx-auto text-center col-md-4">
+			@{
+				if (Model.MonthlyShare == "")
+				{
+					<div class="alert alert-danger" role="alert">
+						 Porfavor, introduzca un valor válido!
+					</div>
+				}
+				else
+				{	
+					<section class="bg-custom-lightblue rounded-3 text-white p-3">
+						<h3 class="display-8 fw-semibold text-uppercase"> <b>Cuota Mensual</b> </h3>
+					</section>
+					<section class="bg-custom-lightred rounded-3 text-white p-3">
+						<h3 class="display-8 fw-semibold text-uppercase"> @Model.MonthlyShare </h3>
+					</section>
+				}
+			}
+			<button type="submit" class="btn bg-custom-darkred btn-block text-white w-100"> Volver </button>
+		</div>
+	</section>
+</form>
